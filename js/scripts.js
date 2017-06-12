@@ -33,13 +33,31 @@ $(document).ready(function(){
 
     //Add the task to the list of tasks.
     $("#taskList").append("<span class='taskListItem'>" + newTask.name + " </span>");
+
+    //Event listener for clicking the task list name
     $(".taskListItem").last().click(function() {
-      alert("you clicked" + newTask.name);
+      $("#infoName").text(newTask.name);
+      $("#infoDueDate").text("Due: " + newTask.dueDate);
+      $("#infoCreatedDate").text("Created: " + newTask.dateCreated);
+      $("#infoAssignedTo").text("Assigned to: " + newTask.assignedPerson);
     });
+
     $("#taskList").append("<input class='taskCheckbox' type='checkbox'><br>");
+
+    //Event listener for each checkbox
     $(".taskCheckbox").last().change(function() {
-      alert("you clicked the textbox for " + newTask.name);
+      if(this.checked) {
+        $(this).prev().addClass("completed");
+    } else {
+        $(this).prev().removeClass("completed");
+    }
+
     });
+
+    //Clear the form
+    $("#inputName").val("");
+    $("#inputDueDate").val("");
+    $("#inputAssignedTo").val("");
 
     console.log(newTask);
 

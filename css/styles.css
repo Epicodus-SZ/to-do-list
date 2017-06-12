@@ -6,3 +6,7 @@
 #resultsColumn {
   background-color: yellow;
 }
+
+.completed {
+  text-decoration: line-through;
+}
