@@ -10,15 +10,28 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
+        <div id="formColumn" class="col-lg-8">
           <h1>To Do List</h1>
-          <form>
+          <form id="formToDo">
+            <div class="form-group">
+              <label for="inputName">Name</label>
+              <input type="text" id="inputName">
+            </div>
+            <div class="form-group">
+              <label for="inputDueDate">Due Date</label>
+              <input type="text" id="inputDueDate">
+            </div>
+            <div class="form-group">
+              <label for="inputAssignedTo">Assigned To</label>
+              <input type="text" id="inputAssignedTo">
+          </div>
+          <div class="form-group">
+            <button type="submit" form="formToDo" value="Submit">Create to do</button>
+          </div>
 
-            <label for=""></label>
           </form>
-
         </div>
-        <div class="col-lg-6">
+        <div id="resultsColumn" class="col-lg-4">
           results
         </div>
 
